@@ -1,0 +1,8 @@
+body{
+    background-image: linear-gradient(135deg, #a3e4ff 0, #48aee5 50%, #007abe 100%);
+    font-weight: 700;
+}
+
+h4{
+    text-decoration: underline;
+}

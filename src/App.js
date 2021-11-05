@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Citas from "./components/Citas";
 import Formulario from "./components/Formulario";
+import './app.css'
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
 
 }
 
+  const condicional = lista.length ===0 ? "No hay citas" : "Citas"
+
   return (
     <>
 
@@ -26,9 +29,9 @@ function App() {
         <div className="row">
 
           {/* FORMULARIO */}
-          <div className="col-7 border">
+          <div className="col-7 ">
 
-            <h4 className="text-center mb-3">Formulario de ingreso</h4>
+            <h4 className="text-center mb-3 mt-2">Formulario de Ingreso</h4>
 
             <Formulario 
             agregarLista={agregarLista}
@@ -40,14 +43,16 @@ function App() {
           </div>
 
           {/*  CITAS */}
-          <div className="col-5 border">
-            <h4 className="text-center mb-5">Citas</h4>
+          <div className="col-5 ">
+            <h4 className="text-center mb-5 mt-2">{condicional}</h4>
 
             {
               lista.map(item =>(
                 <Citas
                 cita={item}
                 eliminar={eliminar}
+                key={item.mascota}
+                lista={lista}
                 />
               ))
             }
